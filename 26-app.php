@@ -135,4 +135,43 @@ Bir();
 Bir();
 Bir();
 Bir();
+
+
+//yield
+function Islem2($Baslangic, $Bitis) {
+    while ($Baslangic <= $Bitis) {
+      yield $Baslangic;
+      $Baslangic++;
+    }
+  }
+
+$Sonuc = Islem2(1, 100);
+foreach ($Sonuc as $Deger) {
+  echo $Deger . " "; 
+}
+echo"<br>";
+
+
+//iç içe çok boyutlu fonksiyonlar
+function Bir1(){
+  function Iki(){
+    echo"İki  adımdaki fonksiyonun içerisi";
+  }
+  echo"İlk adımdaki fonksiyonun içerisi";
+}
+Bir1();
+Iki();
+
+
+
+function Bir2($IsimBir, $SoyisimBir){
+  function Iki2($IsimIki, $SoyisimIki){
+    function Uc2($IsimUc, $SoyisimUc){
+      echo $IsimUc ." " . $SoyisimUc;
+    }
+    Uc2($IsimIki, $SoyisimIki);
+  }
+  Iki2($IsimBir, $SoyisimBir);
+}
+Bir2("Volkan", "Alakent");
 ?>
